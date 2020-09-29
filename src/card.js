@@ -10,6 +10,8 @@ import { MdShoppingCart } from 'react-icons/md';
 import { GiMilkCarton } from 'react-icons/gi'
 import { FaMobileAlt } from 'react-icons/fa'
 
+const mlist = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -21,12 +23,13 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+  const dateInfo = props.date.split(' ');
   return (
     <Card className={classes.root} id="carde" style={{backgroundColor:"#80ffaa"}}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Expense Name: {props.name}
+            Expense Name: <span class="expense-name">{props.name}</span>
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
             Expense Amount: {props.amount}
@@ -35,7 +38,8 @@ export default function MediaCard(props) {
             Expense Type: {props.type}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2"> 
-            Date: {props.date}
+            {/* Month Day, Year */}
+            Date: {`${dateInfo[1]} ${dateInfo[2]}, ${dateInfo[3]}`}
           </Typography>
         </CardContent>
       </CardActionArea>

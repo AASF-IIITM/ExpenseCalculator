@@ -119,16 +119,16 @@ export default function SearchAppBar(props) {
               }}
               inputProps={{ 'aria-label': 'search','id':'sear'}}
               onKeyUp={()=>{
-                  var all = document.getElementById("cards").getElementsByTagName("div");
+                  var all = document.getElementById("cards").getElementsByClassName("expense-name");
                 //   console.log(document.getElementById("sear").value + " "+ all.length)
                 console.log(all)
                   for(var i=0;i<all.length;i++)
                   {
                     var txtValue = all[i].textContent || all[i].innerText;
                     if (txtValue.toLowerCase().includes(document.getElementById("sear").value) ) {
-                      all[i].style.display = "";
+                      all[i].parentNode.parentNode.style.display = "";
                     } else {
-                      all[i].style.display = "none";
+                      all[i].parentNode.parentNode.style.display = "none";
                     }
                   }
               }}
