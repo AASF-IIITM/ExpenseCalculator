@@ -121,10 +121,10 @@ export default function SearchAppBar(props) {
               onKeyUp={()=>{
                   var all = document.getElementById("cards").getElementsByTagName("div");
                 //   console.log(document.getElementById("sear").value + " "+ all.length)
-                console.log(all)
+                // console.log(all)
                   for(var i=0;i<all.length;i++)
                   {
-                    var txtValue = all[i].textContent || all[i].innerText;
+                    var txtValue = all[i].getElementsByTagName("span").exname.textContent || all[i].getElementsByTagName("span").exname.innerText;
                     if (txtValue.toLowerCase().includes(document.getElementById("sear").value) ) {
                       all[i].style.display = "";
                     } else {

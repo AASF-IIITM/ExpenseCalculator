@@ -30,7 +30,7 @@ export default function MediaCard(props) {
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Expense Name: {name}
+            Expense Name: <span id="exname">{name}</span>
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
             Expense Amount: {amount}
