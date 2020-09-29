@@ -21,21 +21,25 @@ const useStyles = makeStyles({
 
 export default function MediaCard(props) {
   const classes = useStyles();
+  let { name, amount, type, date } = props;
+  if (date) {
+    date = (new Date(date)).toLocaleDateString("en-US",{ year: 'numeric', month: 'short', day: 'numeric' });
+  }
   return (
     <Card className={classes.root} id="carde" style={{backgroundColor:"#80ffaa"}}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Expense Name: {props.name}
+            Expense Name: {name}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
-            Expense Amount: {props.amount}
+            Expense Amount: {amount}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
-            Expense Type: {props.type}
+            Expense Type: {type}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2"> 
-            Date: {props.date}
+            Date: {date}
           </Typography>
         </CardContent>
       </CardActionArea>
