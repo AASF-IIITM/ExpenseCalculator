@@ -17,7 +17,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from './card'
-import { AppBar } from '@material-ui/core';
 import NavBar from './appbar';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +35,7 @@ export default function FormDialog() {
   const [age, setAge] = React.useState('');
   const [total1, setTotal] = React.useState(localStorage.getItem("total") || 0);
   // window.addEventListener('storage',function(e){console.log("change");setTotal(localStorage.getItem("total"))})
-  var col="";
+  // var col="";
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -77,9 +76,9 @@ export default function FormDialog() {
   }
 
   { 
-    let count=1;
+    // let count=1;
     if(localStorage.getItem("count"))
-        count = localStorage.getItem("count");
+        localStorage.getItem("count");
     else
         {
             localStorage.setItem("count",1);

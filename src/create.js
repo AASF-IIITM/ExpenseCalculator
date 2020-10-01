@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
 
 import Card from './card'
 
@@ -10,9 +9,9 @@ function create(){
     var temp1=[];
     var temp = document.createElement('div');
     temp.setAttribute('id','cards');
-    let count=1;
+    // let count=1;
     if(localStorage.getItem("count"))
-        count = localStorage.getItem("count");
+        localStorage.getItem("count");
     else
         {
             localStorage.setItem("count",1);

@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Dialog from './dialog'
-import Appbar from './appbar'
-import Create from './create'
 
 
 ReactDOM.render(
