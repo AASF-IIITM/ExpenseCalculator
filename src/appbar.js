@@ -125,7 +125,7 @@ export default function SearchAppBar(props) {
                 console.log(all)
                   for(var i=0;i<all.length;i++)
                   {
-                    var txtValue = all[i].textContent || all[i].innerText;
+                    var txtValue = all[i].getElementsByTagName("span").expensename.textContent || all[i].getElementsByTagName("span").expensename.innerText;
                     if (txtValue.toLowerCase().includes(document.getElementById("sear").value) ) {
                       all[i].style.display = "";
                     } else {
