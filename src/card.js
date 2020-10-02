@@ -37,6 +37,9 @@ export default function MediaCard(props) {
           <Typography gutterBottom variant="h5" component="h2"> 
             Date: {props.date}
           </Typography>
+          <Typography gutterBottom variant="h5" component="h2"> 
+            Time: {props.time}
+          </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
