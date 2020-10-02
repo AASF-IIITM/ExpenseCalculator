@@ -18,6 +18,7 @@ import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from './card'
 import NavBar from './appbar';
+import {AiFillBank} from "react-icons/ai";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -143,6 +144,7 @@ export default function FormDialog() {
             <MenuItem value={10}><MdShoppingCart /> Clothing</MenuItem>
             <MenuItem value={20}><GiMilkCarton /> Eateries</MenuItem>
             <MenuItem value={30}><FaMobileAlt /> Electronics</MenuItem>
+            <MenuItem value={40}><AiFillBank/> Taxes</MenuItem>
             </Select>
       </FormControl>
    
