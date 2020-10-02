@@ -66,7 +66,19 @@ export default function FormDialog() {
     element.name=props.name;
     element.amount=props.amount;
     element.type=props.type;
-    element.date=Date();
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+];  
+   
+    var cardDate = new Date() 
+    var day= cardDate.getDate()
+    const  month = monthNames[cardDate.getMonth()];
+    
+    var year = cardDate.getFullYear()
+
+
+    element.date=month+" "+day+", "+ year;
+     
     total=parseInt(total)+parseInt(props.amount);
     expenses.push((element));
     localStorage.setItem("expenses",JSON.stringify(expenses));
