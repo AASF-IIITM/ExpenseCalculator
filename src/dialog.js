@@ -48,6 +48,21 @@ export default function FormDialog() {
 
   function addExpense(props) {
     let count=1,total=0;
+    var d = new Date();
+    var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    var n = month[d.getMonth()];
         if(localStorage.getItem("count"))
             count = localStorage.getItem("count");
         else
@@ -66,19 +81,7 @@ export default function FormDialog() {
     element.name=props.name;
     element.amount=props.amount;
     element.type=props.type;
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-];  
-   
-    var cardDate = new Date() 
-    var day= cardDate.getDate()
-    const  month = monthNames[cardDate.getMonth()];
-    
-    var year = cardDate.getFullYear()
 
-
-    element.date=month+" "+day+", "+ year;
-     
     total=parseInt(total)+parseInt(props.amount);
     expenses.push((element));
     localStorage.setItem("expenses",JSON.stringify(expenses));
@@ -100,7 +103,7 @@ export default function FormDialog() {
     var temp1=[];
     for(let i=0;i<expenses.length;i++)
     {
-        temp1.push(<Card name={expenses[i].name} amount={expenses[i].amount} type={expenses[i].type} date={expenses[i].date} col={expenses[i].col} />);
+        temp1.push(<Card name={expenses[i].name} amount={expenses[i].amount} type={expenses[i].type} date={expenses[i].date} time = {expenses[i].time} col={expenses[i].col} />);
     }
   };
 
