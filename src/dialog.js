@@ -18,6 +18,7 @@ import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from './card'
 import NavBar from './appbar';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -82,6 +83,7 @@ export default function FormDialog() {
     element.type=props.type;
     element.date = d.getDate() + " " + n + "," + " " + d.getFullYear();
     element.time = d.toLocaleTimeString();
+    element.key = parseInt(count)
     total=parseInt(total)+parseInt(props.amount);
     expenses.push((element));
     localStorage.setItem("expenses",JSON.stringify(expenses));
@@ -103,8 +105,9 @@ export default function FormDialog() {
     var temp1=[];
     for(let i=0;i<expenses.length;i++)
     {
-        temp1.push(<Card name={expenses[i].name} amount={expenses[i].amount} type={expenses[i].type} date={expenses[i].date} time = {expenses[i].time} col={expenses[i].col} />);
+        temp1.push(<Card name={expenses[i].name} amount={expenses[i].amount} type={expenses[i].type} date={expenses[i].date} time = {expenses[i].time} col={expenses[i].col} key={expenses[i].key} />);
     }
+    console.log(temp1)
   };
 
   const classes = useStyles();
@@ -116,7 +119,18 @@ export default function FormDialog() {
   return (
     <div>
       <NavBar total={total1} />
-        <div id="cards" class="cards">{temp1}</div>
+        {/* <div id="cards" class="cards">{temp1}</div> */}
+        <Grid container spacing={3} alignItems="center" style={{marginTop:"70px", padding: "0 30px", boxSizing: "border-box", width: "100%"}}>
+          {
+            temp1.map(card => {
+              return (
+                <Grid item xs={12} sm={6} md={3} style={{display: "flex", justifyContent: "center"}}>
+                  {card}
+                </Grid>
+              )
+            })
+          }
+        </Grid>
         
         <div id="create" onClick={handleClickOpen}>
                 <Fab color="primary" aria-label="add">
