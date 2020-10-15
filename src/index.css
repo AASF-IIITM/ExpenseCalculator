@@ -41,3 +41,27 @@ code {
   display: inline-block;
   margin: 4px;
 }
+
+#cardName {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#cardAmount {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#cardTime {
+  margin-top: 15px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#cardDate {
+  margin-top: 15px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
